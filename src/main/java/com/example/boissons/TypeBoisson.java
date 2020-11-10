@@ -1,5 +1,6 @@
 package com.example.boissons;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -18,5 +19,6 @@ public class TypeBoisson {
     @OneToMany
     @JoinColumn(name = "type_boisson_id")
     @OrderBy("name")
+    @JsonIgnoreProperties
     private List<Boisson> boissons;
 }
