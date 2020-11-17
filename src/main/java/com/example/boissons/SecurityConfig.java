@@ -37,10 +37,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http.csrf().disable()
+                .authorizeRequests()
                 .mvcMatchers("/boissons").permitAll()
                 .mvcMatchers("/typesBoissons").hasAuthority("SCOPE_read:messages")
                 .and().cors()
-                .and().oauth2ResourceServer().jwt();
+                .and().oauth2ResourceServer().jwt()
+                ;
     }
 }
