@@ -1,0 +1,682 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2020-11-15T10:22:50.950Z",
+  "__export_source": "insomnia.desktop.app:v2020.4.2",
+  "resources": [
+    {
+      "_id": "req_6fed5554aebf4b3c9f03b1366ba43bec",
+      "parentId": "fld_058ce58551d8446dbf348b30e9e38658",
+      "modified": 1605435242687,
+      "created": 1605432099336,
+      "url": "https://dev-o54rc9-g.eu.auth0.com/oauth/token",
+      "name": "Get Token",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/x-www-form-urlencoded",
+        "params": [
+          {
+            "name": "grant_type",
+            "value": "client_credentials",
+            "description": "",
+            "id": "pair_2ccf157ea2134a239df6ce4c87e510f3"
+          },
+          {
+            "name": "client_id",
+            "value": "{{ clientId }}",
+            "description": "",
+            "id": "pair_64f5cc61a0b34f838aebf126e5659035"
+          },
+          {
+            "name": "client_secret",
+            "value": "{{ clientSecret }}",
+            "description": "",
+            "id": "pair_3420dab0a8944a39b9a6917cb7aee9df"
+          },
+          {
+            "name": "audience",
+            "value": "{{ audience }}",
+            "description": "",
+            "id": "pair_b95566025a3641dc981da48e222724a6"
+          }
+        ]
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded",
+          "id": "pair_91570918ff4f4e29bc8e5d64e76ef028"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1605432099336,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_058ce58551d8446dbf348b30e9e38658",
+      "parentId": "fld_cd14b2afc09140b0a5105fdc2524f079",
+      "modified": 1605432085612,
+      "created": 1605432085612,
+      "name": "oauth",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1605432085612,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_cd14b2afc09140b0a5105fdc2524f079",
+      "parentId": "wrk_aa7491adbdc34602a228eb5599d54d07",
+      "modified": 1604392867341,
+      "created": 1604392867284,
+      "name": "Distributeur",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1000000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_aa7491adbdc34602a228eb5599d54d07",
+      "parentId": null,
+      "modified": 1604392852481,
+      "created": 1604392852481,
+      "name": "Boissons",
+      "description": "",
+      "scope": null,
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_00e7337027b54bd6bc790cd36c8dc738",
+      "parentId": "fld_78ef3a60a9324f2c885f3f013cf8e3d3",
+      "modified": 1605435376857,
+      "created": 1604392867314,
+      "url": "http://localhost:8080/typesBoissons",
+      "name": "TypesBoissons :: List",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_6fed5554aebf4b3c9f03b1366ba43bec', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'never', 60 %}"
+      },
+      "metaSortKey": -1602150295912,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_78ef3a60a9324f2c885f3f013cf8e3d3",
+      "parentId": "fld_cd14b2afc09140b0a5105fdc2524f079",
+      "modified": 1604392867311,
+      "created": 1604392867311,
+      "name": "TypeBoisson",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1604392641636,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_5225cb08c3f04c84b4cd66f9a8140e53",
+      "parentId": "fld_78ef3a60a9324f2c885f3f013cf8e3d3",
+      "modified": 1605435451242,
+      "created": 1605432864596,
+      "url": "http://localhost:8080/typesBoissons",
+      "name": "TypesBoissons  :: List - Wrong Token",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "je-ne-suis-pas-un-vrai-token"
+      },
+      "metaSortKey": -1602150295899.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_e380e781cf2c47c98f362cb29dc414d8",
+      "parentId": "fld_78ef3a60a9324f2c885f3f013cf8e3d3",
+      "modified": 1605435400554,
+      "created": 1604392867317,
+      "url": "http://localhost:8080/boissons/1/typeBoisson",
+      "name": "TypesBoissons :: 1",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_6fed5554aebf4b3c9f03b1366ba43bec', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'never', 60 %}"
+      },
+      "metaSortKey": -1602150295893.25,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_5080ef065dcf442892fa7ca656db468a",
+      "parentId": "fld_78ef3a60a9324f2c885f3f013cf8e3d3",
+      "modified": 1605435651778,
+      "created": 1604392867324,
+      "url": "http://localhost:8080/typesBoissons/1/boissons",
+      "name": "TypesBoissons :: 1 > Boissons",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_6fed5554aebf4b3c9f03b1366ba43bec', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'never', 60 %}"
+      },
+      "metaSortKey": -1602150295887,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_58d1eb518e274003ae03788524101b73",
+      "parentId": "fld_78ef3a60a9324f2c885f3f013cf8e3d3",
+      "modified": 1605435417760,
+      "created": 1604392867321,
+      "url": "http://localhost:8080/typesBoissons",
+      "name": "TypesBoissons :: Add",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": 1,\n\t\"name\": \"cafe moulu\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_6604a0d7ad46498890dd44b9bb730dc4"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "{% response 'body', 'req_6fed5554aebf4b3c9f03b1366ba43bec', 'b64::JC5hY2Nlc3NfdG9rZW4=::46b', 'never', 60 %}"
+      },
+      "metaSortKey": -1602150295862,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_f349993a382f4ed4b6435c1e34982ec8",
+      "parentId": "fld_78ef3a60a9324f2c885f3f013cf8e3d3",
+      "modified": 1605435441871,
+      "created": 1604845598025,
+      "url": "http://localhost:8080/typesBoissons",
+      "name": "TypesBoissons :: Add - Wrong Token",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": 1,\n\t\"name\": \"cafe moulu\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_6604a0d7ad46498890dd44b9bb730dc4"
+        }
+      ],
+      "authentication": {
+        "type": "bearer",
+        "token": "je-ne-suis-pas-un-vrai-token"
+      },
+      "metaSortKey": -1601112736312,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_934b239c2cb145109a82d9bb653cdcf2",
+      "parentId": "fld_559de6dd79504c77baa5e49077490961",
+      "modified": 1605435540978,
+      "created": 1604845662659,
+      "url": "http://localhost:8080/boissons",
+      "name": "Boissons :: Add :: 1 - with path type",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": 1,\n\t\"name\": \"cafe court\",\n\t\"typeBoisson\": \"/typesBoissons/1\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_6604a0d7ad46498890dd44b9bb730dc4"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1603187855587,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_559de6dd79504c77baa5e49077490961",
+      "parentId": "fld_cd14b2afc09140b0a5105fdc2524f079",
+      "modified": 1604392867287,
+      "created": 1604392867287,
+      "name": "Boisson",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1604392635867,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_5426708afc3441c98049f96f0a4e8e06",
+      "parentId": "fld_559de6dd79504c77baa5e49077490961",
+      "modified": 1605435585695,
+      "created": 1604845668160,
+      "url": "http://localhost:8080/boissons",
+      "name": "Boissons :: Add :: 2 - with URL type",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": 2,\n\t\"name\": \"cafe long\",\n\t\"typeBoisson\": \"http://localhost:8080/typesBoissons/1\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_6604a0d7ad46498890dd44b9bb730dc4"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "disabled": false,
+        "username": "ducobu",
+        "password": "vacances"
+      },
+      "metaSortKey": -1603187855524.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_8ae8c904effb43068832bc2221dc7c39",
+      "parentId": "fld_559de6dd79504c77baa5e49077490961",
+      "modified": 1605435577618,
+      "created": 1604845674512,
+      "url": "http://localhost:8080/boissons",
+      "name": "Boissons :: Add :: 3 - with type path",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": 3,\n\t\"name\": \"cafe long avec sucre\",\n\t\"typeBoisson\": \"/typesBoissons/1\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_6604a0d7ad46498890dd44b9bb730dc4"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "disabled": false,
+        "username": "ducobu",
+        "password": "vacances"
+      },
+      "metaSortKey": -1603187855508.875,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_c73a83c54d8c45e499b98dd0d6799fec",
+      "parentId": "fld_559de6dd79504c77baa5e49077490961",
+      "modified": 1605435609919,
+      "created": 1604845681594,
+      "url": "http://localhost:8080/boissons/1",
+      "name": "Boissons :: Update :: 1 - with type paths",
+      "description": "",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"id\": 1,\n\t\"name\": \"cafe court\",\n\t\"typeBoisson\": \"/typesBoissons/1\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_6604a0d7ad46498890dd44b9bb730dc4"
+        }
+      ],
+      "authentication": {
+        "type": "basic",
+        "disabled": false,
+        "username": "ducobu",
+        "password": "vacances"
+      },
+      "metaSortKey": -1603187855502.625,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_b27184cc502c473487162c809e432e1a",
+      "parentId": "fld_559de6dd79504c77baa5e49077490961",
+      "modified": 1605435620056,
+      "created": 1604392867289,
+      "url": "http://localhost:8080/boissons",
+      "name": "Boissons :: List",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "basic",
+        "disabled": true,
+        "username": "ducobu",
+        "password": "vacances"
+      },
+      "metaSortKey": -1603187855487,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_3cb2e6b45d294ebbb852cbee3382de0c",
+      "parentId": "fld_559de6dd79504c77baa5e49077490961",
+      "modified": 1605435629503,
+      "created": 1605002342244,
+      "url": "http://localhost:8080/boissons/1",
+      "name": "Boissons :: 1",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "basic",
+        "disabled": false,
+        "username": "ducobu",
+        "password": "vacances"
+      },
+      "metaSortKey": -1603058160546.375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_3dca70b38fe544f5b4ebee27aa527818",
+      "parentId": "fld_559de6dd79504c77baa5e49077490961",
+      "modified": 1605435691653,
+      "created": 1604999905976,
+      "url": "http://localhost:8080/boissons/search/",
+      "name": "Boissons :: Search - describe",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "basic",
+        "disabled": false,
+        "username": "ducobu",
+        "password": "vacances"
+      },
+      "metaSortKey": -1602863618135.4375,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_4ceac142598c465b9ddb54db6bd77802",
+      "parentId": "fld_559de6dd79504c77baa5e49077490961",
+      "modified": 1605435716077,
+      "created": 1604999711716,
+      "url": "http://localhost:8080/boissons/search/findBoissonByNameIsStartingWith?name=caf",
+      "name": "Boissons :: Search > byNameStartingWith",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {
+        "type": "basic",
+        "disabled": false,
+        "username": "ducobu",
+        "password": "vacances"
+      },
+      "metaSortKey": -1602669075724.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_7aeb87f00962e05afa27b1c8fbcba3f06d664189",
+      "parentId": "wrk_aa7491adbdc34602a228eb5599d54d07",
+      "modified": 1604392852526,
+      "created": 1604392852526,
+      "name": "Base Environment",
+      "data": {},
+      "dataPropertyOrder": null,
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1604392852526,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_7aeb87f00962e05afa27b1c8fbcba3f06d664189",
+      "parentId": "wrk_aa7491adbdc34602a228eb5599d54d07",
+      "modified": 1605432263121,
+      "created": 1604392852528,
+      "name": "Default Jar",
+      "cookies": [
+        {
+          "key": "JSESSIONID",
+          "value": "D3D1B56D64699C3CD2C33DD2D6EB6699",
+          "domain": "localhost",
+          "path": "/",
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-03T09:32:12.543Z",
+          "lastAccessed": "2020-11-10T18:02:21.388Z",
+          "id": "6455142661695883"
+        },
+        {
+          "key": "__cfduid",
+          "value": "d34e87e0faba4cc350ecdb5715a5c36d41605432263",
+          "expires": "2020-12-15T09:24:23.000Z",
+          "domain": "eu.auth0.com",
+          "path": "/",
+          "secure": true,
+          "httpOnly": true,
+          "extensions": [
+            "SameSite=Lax"
+          ],
+          "hostOnly": false,
+          "creation": "2020-11-15T09:24:23.102Z",
+          "lastAccessed": "2020-11-15T09:24:23.102Z",
+          "id": "2696794298204963"
+        },
+        {
+          "key": "did",
+          "value": "s%3Av0%3A59027010-2724-11eb-890e-c11221a797e0.NcVQc1xWnfuBkwO4pr%2Bcmfb0lsGFmP%2BGETEYubK6fYw",
+          "expires": "2021-11-15T15:24:23.000Z",
+          "maxAge": 31557600,
+          "domain": "dev-o54rc9-g.eu.auth0.com",
+          "path": "/",
+          "secure": true,
+          "httpOnly": true,
+          "extensions": [
+            "SameSite=None"
+          ],
+          "hostOnly": true,
+          "creation": "2020-11-15T09:24:23.106Z",
+          "lastAccessed": "2020-11-15T09:24:23.106Z",
+          "id": "13614961624826072"
+        },
+        {
+          "key": "did_compat",
+          "value": "s%3Av0%3A59027010-2724-11eb-890e-c11221a797e0.NcVQc1xWnfuBkwO4pr%2Bcmfb0lsGFmP%2BGETEYubK6fYw",
+          "expires": "2021-11-15T15:24:23.000Z",
+          "maxAge": 31557600,
+          "domain": "dev-o54rc9-g.eu.auth0.com",
+          "path": "/",
+          "secure": true,
+          "httpOnly": true,
+          "hostOnly": true,
+          "creation": "2020-11-15T09:24:23.106Z",
+          "lastAccessed": "2020-11-15T09:24:23.106Z",
+          "id": "7180931344769717"
+        },
+        {
+          "key": "__cf_bm",
+          "value": "12d860fdc05deef385c0636ad0691cf613702e43-1605432263-1800-AaFpuj7ysJO+3W6YivndgxZWruTSLVEbT4UNJIuVC28K808tW4U7lSEsTynFlPqndcpF39j7HJEA8/tUdqCSNvE=",
+          "expires": "2020-11-15T09:54:23.000Z",
+          "domain": "eu.auth0.com",
+          "path": "/",
+          "secure": true,
+          "httpOnly": true,
+          "extensions": [
+            "SameSite=None"
+          ],
+          "hostOnly": false,
+          "creation": "2020-11-15T09:24:23.107Z",
+          "lastAccessed": "2020-11-15T09:24:23.107Z",
+          "id": "04160566612087058"
+        }
+      ],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_c18968f1c4e841ac87adbf58f3f65433",
+      "parentId": "wrk_aa7491adbdc34602a228eb5599d54d07",
+      "modified": 1604392852486,
+      "created": 1604392852486,
+      "fileName": "Boissons",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    },
+    {
+      "_id": "env_ec3e196b6efd444baa2db291b1d007f7",
+      "parentId": "env_7aeb87f00962e05afa27b1c8fbcba3f06d664189",
+      "modified": 1605435193114,
+      "created": 1605435091097,
+      "name": "Localhost",
+      "data": {
+        "clientId": "putYouClientIdHere",
+        "clientSecret": "putYourClientSecretHere",
+        "audience": "http://localhost:8080/"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "clientId",
+          "clientSecret",
+          "audience"
+        ]
+      },
+      "color": "#3bbf69",
+      "isPrivate": false,
+      "metaSortKey": 1605435091097,
+      "_type": "environment"
+    }
+  ]
+}
